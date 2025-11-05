@@ -12,3 +12,4 @@ C:\Users\user\RiderProjects\ToDoApp\ToDoApp\obj\Debug\net6.0-windows\refint\ToDo
 C:\Users\user\RiderProjects\ToDoApp\ToDoApp\obj\Debug\net6.0-windows\ToDoApp.pdb
 C:\Users\user\RiderProjects\ToDoApp\ToDoApp\obj\Debug\net6.0-windows\ToDoApp.genruntimeconfig.cache
 C:\Users\user\RiderProjects\ToDoApp\ToDoApp\obj\Debug\net6.0-windows\ref\ToDoApp.dll
+C:\Users\user\RiderProjects\ToDoApp\ToDoApp\obj\Debug\net6.0-windows\ToDoApp.sourcelink.json
