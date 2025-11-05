@@ -8,6 +8,7 @@ namespace TodoApp
     public partial class Form1 : Form
     {
         private List<Task> tasks;
+        public bool? sortin = null;
 
         public Form1()
         {
@@ -113,16 +114,58 @@ namespace TodoApp
         private void rbtnFilter_Click(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
-            Console.WriteLine(rb.Text);
+            if (rb.Checked)
+            {
+                if (rb.Text == "Wszystkie")
+                {
+                    sortin = null;
+                }
+                else if (rb.Text == "Aktywne")
+                {
+                    sortin = true;
+                }
+                else if (rb.Text == "Wykonane")
+                {
+                    sortin = false;
+                }
+                RefreshTasksList();
+                UpdateStats();
+                SaveTasksToFile();
+            }
         }
 
         private void RefreshTasksList()
         {
             lstTasks.Items.Clear();
-
-            foreach (Task task in tasks)
+            if (sortin != null)
             {
-                lstTasks.Items.Add(task.ToString());
+                if (sortin == true)
+                {
+                    foreach (Task task in tasks)
+                    {
+                        if (task.IsCompleted)
+                        {
+                            lstTasks.Items.Add(task.ToString());
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Task task in tasks)
+                    {
+                        if (!task.IsCompleted)
+                        {
+                            lstTasks.Items.Add(task.ToString());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (Task task in tasks)
+                {
+                    lstTasks.Items.Add(task.ToString());
+                }
             }
         }
 
