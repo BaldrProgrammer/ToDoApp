@@ -15,7 +15,10 @@ namespace TodoApp
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnToggleComplete;
         private System.Windows.Forms.ComboBox cmbCategory;
-        private System.Windows.Forms.ComboBox cmbFilter;
+        private System.Windows.Forms.ComboBox cmbSort;
+        private System.Windows.Forms.RadioButton rbtnFilter1;
+        private System.Windows.Forms.RadioButton rbtnFilter2;
+        private System.Windows.Forms.RadioButton rbtnFilter3;
         private System.Windows.Forms.Label lblStats;
 
         protected override void Dispose(bool disposing)
@@ -32,7 +35,10 @@ namespace TodoApp
             // Inicjalizacja kontrolek
             this.txtNewTask = new System.Windows.Forms.TextBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.cmbSort = new System.Windows.Forms.ComboBox();
+            this.rbtnFilter1 = new System.Windows.Forms.RadioButton();
+            this.rbtnFilter2 = new System.Windows.Forms.RadioButton();
+            this.rbtnFilter3 = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lstTasks = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -53,11 +59,25 @@ namespace TodoApp
             this.cmbCategory.Items.AddRange(new object[] { "Praca", "Dom", "Studia", "Zakupy", "Ogólne" });
             this.cmbCategory.SelectedIndex = 4;
             
-            // Combobox filtrow
-            this.cmbFilter.Location = new System.Drawing.Point(218, 36);
-            this.cmbFilter.Size = new System.Drawing.Size(100, 21);
-            this.cmbFilter.Items.AddRange(new object[] { "data", "status", "kategoria" });
-            this.cmbFilter.SelectedIndex = 1;
+            // Combobox sortowania
+            this.cmbSort.Location = new System.Drawing.Point(218, 36);
+            this.cmbSort.Size = new System.Drawing.Size(100, 21);
+            this.cmbSort.Items.AddRange(new object[] { "data", "status", "kategoria" });
+            this.cmbSort.SelectedIndex = 1;
+
+            // Przelacznik filtrow
+            this.rbtnFilter1.Location = new System.Drawing.Point(12, 36);
+            this.rbtnFilter2.Location = new System.Drawing.Point(77, 36);
+            this.rbtnFilter3.Location = new System.Drawing.Point(142, 36);
+            this.rbtnFilter1.Size = new System.Drawing.Size(65, 21);
+            this.rbtnFilter2.Size = new System.Drawing.Size(65, 21);
+            this.rbtnFilter3.Size = new System.Drawing.Size(70, 21);
+            this.rbtnFilter1.Text = "Wszystkie";
+            this.rbtnFilter2.Text = "Aktywne";
+            this.rbtnFilter3.Text = "Wykonane";
+            this.rbtnFilter1.CheckedChanged += new System.EventHandler(this.rbtnFilter_Click);
+            this.rbtnFilter2.CheckedChanged += new System.EventHandler(this.rbtnFilter_Click);
+            this.rbtnFilter3.CheckedChanged += new System.EventHandler(this.rbtnFilter_Click);
 
             // Przycisk Dodaj
             this.btnAdd.Location = new System.Drawing.Point(324, 10);
@@ -98,9 +118,10 @@ namespace TodoApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 311);
             this.Controls.AddRange(new System.Windows.Forms.Control[] {
-                this.txtNewTask, this.cmbCategory, this.cmbFilter, this.btnAdd,
-                this.lstTasks, this.btnDelete, this.btnToggleComplete,
-                this.btnClear, this.lblStats
+                this.txtNewTask, this.cmbCategory, this.cmbSort,
+                this.rbtnFilter1, this.rbtnFilter2, this.rbtnFilter3,
+                this.btnAdd, this.lstTasks, this.btnDelete, 
+                this.btnToggleComplete, this.btnClear, this.lblStats
             });
             this.Text = "Lista Zadań";
 
