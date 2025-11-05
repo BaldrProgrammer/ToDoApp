@@ -114,12 +114,6 @@ namespace TodoApp
         private void rbtnFilter_Click(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
-            Console.WriteLine(rb.Text);
-        }
-        
-        private void rbtnFilter_Click(object sender, EventArgs e)
-        {
-            RadioButton rb = sender as RadioButton;
             if (rb.Checked)
             {
                 if (rb.Text == "Wszystkie")
