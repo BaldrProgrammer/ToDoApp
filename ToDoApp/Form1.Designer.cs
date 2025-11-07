@@ -89,6 +89,7 @@ namespace TodoApp
             this.lstTasks.Location = new System.Drawing.Point(12, 60);
             this.lstTasks.Size = new System.Drawing.Size(387, 180);
             this.lstTasks.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lstTasks.DoubleClick += this.open_wondow;
 
             // Przycisk Usuń
             this.btnDelete.Location = new System.Drawing.Point(12, 250);

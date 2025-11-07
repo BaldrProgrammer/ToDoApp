@@ -134,12 +134,21 @@ namespace TodoApp
             }
         }
 
+        private void open_wondow(object sender, EventArgs e)
+        {
+            if (lstTasks.SelectedItem != null)
+            {
+                Console.WriteLine(lstTasks.SelectedIndex);
+                Console.WriteLine(lstTasks.SelectedItem);
+            }
+        }
+
         private void RefreshTasksList()
         {
             lstTasks.Items.Clear();
             if (sortin != null)
             {
-                if (sortin == true)
+                if (sortin != true)
                 {
                     foreach (Task task in tasks)
                     {
