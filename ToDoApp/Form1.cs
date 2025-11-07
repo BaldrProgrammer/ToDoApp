@@ -138,6 +138,9 @@ namespace TodoApp
         {
             if (lstTasks.SelectedItem != null)
             {
+                Form2 child = new Form2();
+                child.ShowDialog();
+                Console.WriteLine(child.NovoeIme);
                 Console.WriteLine(lstTasks.SelectedIndex);
                 Console.WriteLine(lstTasks.SelectedItem);
             }
