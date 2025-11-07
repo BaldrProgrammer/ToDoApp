@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -56,7 +56,7 @@ namespace TodoApp
             // ComboBox kategorii
             this.cmbCategory.Location = new System.Drawing.Point(218, 12);
             this.cmbCategory.Size = new System.Drawing.Size(100, 21);
-            this.cmbCategory.Items.AddRange(new object[] { "Praca", "Dom", "Studia", "Zakupy", "Sport", "Rozwój", "Rodzina", "Przyjaciele", "Zdrowie", "Ogólne" });
+            this.cmbCategory.Items.AddRange(new object[] { "Praca", "Dom", "Studia", "Zakupy", "Ogólne" });
             this.cmbCategory.SelectedIndex = 4;
             
             // Combobox sortowania
