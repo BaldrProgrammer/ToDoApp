@@ -140,9 +140,15 @@ namespace TodoApp
             {
                 Form2 child = new Form2();
                 child.ShowDialog();
-                Console.WriteLine(child.NovoeIme);
-                Console.WriteLine(lstTasks.SelectedIndex);
-                Console.WriteLine(lstTasks.SelectedItem);
+                var selectedIndices = lstTasks.SelectedIndices.Cast<int>().ToList();
+                foreach (int i in selectedIndices)
+                {
+                    tasks[i].Description = child.NovoeIme;
+                }
+                RefreshTasksList();
+                UpdateStats();
+                SaveTasksToFile();
+                
             }
         }
 

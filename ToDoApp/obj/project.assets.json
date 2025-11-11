@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "/home/administrator/.nuget/packages/": {}
+    "C:\\Users\\royal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/administrator/school/ToDoApp/ToDoApp/ToDoApp.csproj",
+      "projectUniqueName": "C:\\Users\\royal\\RiderProjects\\ToDoApp\\ToDoApp\\ToDoApp.csproj",
       "projectName": "ToDoApp",
-      "projectPath": "/home/administrator/school/ToDoApp/ToDoApp/ToDoApp.csproj",
-      "packagesPath": "/home/administrator/.nuget/packages/",
-      "outputPath": "/home/administrator/school/ToDoApp/ToDoApp/obj/",
+      "projectPath": "C:\\Users\\royal\\RiderProjects\\ToDoApp\\ToDoApp\\ToDoApp.csproj",
+      "packagesPath": "C:\\Users\\royal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\royal\\RiderProjects\\ToDoApp\\ToDoApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/administrator/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\royal\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows"
@@ -38,13 +38,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -68,7 +62,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/administrator/.dotnet/sdk/9.0.305/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\royal\\.dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
       }
     }
   }
