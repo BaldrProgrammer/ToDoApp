@@ -43,6 +43,13 @@ namespace TodoApp
             }
         }
 
+        private void MainUpdate(object sender, EventArgs e)
+        {
+            RefreshTasksList();
+            UpdateStats();
+            SaveTasksToFile();
+        }
+
         private void AddNewTask()
         {
             string description = txtNewTask.Text.Trim();
@@ -154,12 +161,33 @@ namespace TodoApp
 
         private void RefreshTasksList()
         {
+            List<Task> newTasks = new List<Task>();
+            Console.WriteLine(cmbSort.SelectedIndex);
+            Console.WriteLine(cmbSort.SelectedIndex == 3);
+            
+            if (cmbSort.SelectedIndex == 0)
+            {
+                newTasks = tasks.OrderBy(t => t.Description).ToList();
+            }
+            else if (cmbSort.SelectedIndex == 1)
+            {
+                newTasks = tasks.OrderByDescending(t => t.Description).ToList();
+            }
+            else if (cmbSort.SelectedIndex == 2)
+            {
+                newTasks = tasks.OrderBy(t => t.CreatedDate).ToList();
+            }
+            else if (cmbSort.SelectedIndex == 3)
+            {
+                newTasks = tasks.OrderByDescending(t => t.CreatedDate).ToList();
+            }
+            
             lstTasks.Items.Clear();
             if (sortin != null)
             {
                 if (sortin != true)
                 {
-                    foreach (Task task in tasks)
+                    foreach (Task task in newTasks)
                     {
                         if (task.IsCompleted)
                         {
@@ -169,7 +197,7 @@ namespace TodoApp
                 }
                 else
                 {
-                    foreach (Task task in tasks)
+                    foreach (Task task in newTasks)
                     {
                         if (!task.IsCompleted)
                         {
@@ -180,7 +208,7 @@ namespace TodoApp
             }
             else
             {
-                foreach (Task task in tasks)
+                foreach (Task task in newTasks)
                 {
                     lstTasks.Items.Add(task.ToString());
                 }

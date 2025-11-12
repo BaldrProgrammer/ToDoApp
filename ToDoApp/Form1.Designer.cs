@@ -62,8 +62,9 @@ namespace TodoApp
             // Combobox sortowania
             this.cmbSort.Location = new System.Drawing.Point(218, 36);
             this.cmbSort.Size = new System.Drawing.Size(100, 21);
-            this.cmbSort.Items.AddRange(new object[] { "Data", "Status", "Kategoria" });
-            this.cmbSort.SelectedIndex = 1;
+            this.cmbSort.Items.AddRange(new object[] { "alfabet: up", "alfabet: down", "Data: up", "Data: down" });
+            this.cmbSort.SelectedIndex = 3;
+            this.cmbSort.SelectedIndexChanged += this.MainUpdate;
 
             // Przelacznik filtrow
             this.rbtnFilter1.Location = new System.Drawing.Point(12, 36);
